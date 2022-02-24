@@ -1,0 +1,19 @@
+{
+  "name": "lazer-components",
+  "version": "1.0.0",
+  "description": "Lazer components  repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazardjordjevic/lazer-components.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lazardjordjevic/lazer-components/issues"
+  },
+  "homepage": "https://github.com/lazardjordjevic/lazer-components#readme"
+}
