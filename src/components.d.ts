@@ -12,6 +12,16 @@ export namespace Components {
          */
         "buttonText": string;
     }
+    interface LazerRainbowCard {
+        /**
+          * image src
+         */
+        "cardImage": string;
+        /**
+          * Title
+         */
+        "cardTitle": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -34,6 +44,12 @@ declare global {
         prototype: HTMLLazerButtonElement;
         new (): HTMLLazerButtonElement;
     };
+    interface HTMLLazerRainbowCardElement extends Components.LazerRainbowCard, HTMLStencilElement {
+    }
+    var HTMLLazerRainbowCardElement: {
+        prototype: HTMLLazerRainbowCardElement;
+        new (): HTMLLazerRainbowCardElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -42,6 +58,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "lazer-button": HTMLLazerButtonElement;
+        "lazer-rainbow-card": HTMLLazerRainbowCardElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -55,6 +72,16 @@ declare namespace LocalJSX {
           * Button click event
          */
         "onLazerButtonClickEvent"?: (event: CustomEvent<any>) => void;
+    }
+    interface LazerRainbowCard {
+        /**
+          * image src
+         */
+        "cardImage"?: string;
+        /**
+          * Title
+         */
+        "cardTitle"?: string;
     }
     interface MyComponent {
         /**
@@ -72,6 +99,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "lazer-button": LazerButton;
+        "lazer-rainbow-card": LazerRainbowCard;
         "my-component": MyComponent;
     }
 }
@@ -80,6 +108,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "lazer-button": LocalJSX.LazerButton & JSXBase.HTMLAttributes<HTMLLazerButtonElement>;
+            "lazer-rainbow-card": LocalJSX.LazerRainbowCard & JSXBase.HTMLAttributes<HTMLLazerRainbowCardElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
