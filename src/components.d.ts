@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface LazerButton {
+        /**
+          * Inner button text
+         */
+        "buttonText": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +28,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLLazerButtonElement extends Components.LazerButton, HTMLStencilElement {
+    }
+    var HTMLLazerButtonElement: {
+        prototype: HTMLLazerButtonElement;
+        new (): HTMLLazerButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +41,21 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "lazer-button": HTMLLazerButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface LazerButton {
+        /**
+          * Inner button text
+         */
+        "buttonText"?: string;
+        /**
+          * Button click event
+         */
+        "onLazerButtonClickEvent"?: (event: CustomEvent<any>) => void;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +71,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "lazer-button": LazerButton;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +79,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "lazer-button": LocalJSX.LazerButton & JSXBase.HTMLAttributes<HTMLLazerButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
