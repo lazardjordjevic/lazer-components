@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+.lazer-card {
+  max-width: 600px;
+  /* margin: 0 auto; */
+  background: transparent;
+}
+
+.lazer-card__title {
+  font-size: 30px;
+  line-height: 34px;
+  color: #be5b04;
+  margin-bottom: 10px;
+}
+
+.lazer-card__date {
+  display: block;
+  font-size: 18px;
+  line-height: 22px;
+  color: #efefef;
+}
+
+.lazer-card__description {
+  font-size: 22px;
+  line-height: 26px;
+  color: #efefef;
+  margin-top: 10px;
+  display: block;
+}
