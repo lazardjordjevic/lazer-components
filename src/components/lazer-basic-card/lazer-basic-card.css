@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.rainbow-card {
+  padding: 2px;
+  border-radius: 15px;
+  background: conic-gradient(from 220deg at 52.3% 54.16%, #dc9f1c 0deg, #e42922 108.12deg, #2085ce 201.88deg, #58b64a 275.93deg, #dc9f1c 359.51deg, #dc9f1c 1turn);
+  box-shadow: 3px 30px 58px rgb(0 0 0 / 8%), 1.5px 15px 25px rgb(0 0 0 / 5%), 0.6px 6px 9.5px rgb(0 0 0 / 4%), 0.2px 1.3px 3.3px rgb(0 0 0 / 3%);
+  width: 400px;
+  text-align: center;
+}
+
+.rainbow-card__inner {
+  padding: 35px 20px;
+  border-radius: 13px;
+  position: relative;
+  background-color: #fff;
+}
+
+.rainbow-card__avatar {
+  position: relative;
+  display: inline-block;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+
+.rainbow-card__avatar-image {
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.rainbow-card__title {
+  text-align: center;
+  margin-top: 0;
+}
